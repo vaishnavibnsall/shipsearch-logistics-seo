@@ -293,7 +293,7 @@ Proposed next steps; these are not implemented capabilities or delivery commitme
 
 ## License
 
-The repository currently contains an [MIT license](LICENSE) from the initial setup. The owner’s intended licensing choice is awaiting confirmation; this documentation update does not add or replace the license. Third-party datasets, fonts, trademarks and external content retain their own terms.
+Original project code, prose and illustration are licensed under the **[MIT License](LICENSE)**, as confirmed by the project owner. Third-party datasets, fonts, trademarks and external content retain their own terms and are excluded from this license.
 
 ---
 
