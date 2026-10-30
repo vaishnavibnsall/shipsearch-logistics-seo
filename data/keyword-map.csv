@@ -1,0 +1,13 @@
+keyword,intent,destination,priority,rationale
+"courier service Dubai","Local / commercial","Homepage","High","Core city + service intent"
+"domestic delivery UAE","Commercial","Domestic delivery","High","Matches national service coverage"
+"same day courier Dubai","Transactional","Domestic delivery FAQ","Medium","Availability question; avoid guaranteed claims"
+"document delivery Dubai","Transactional","Domestic delivery","Medium","Specific shipment use case"
+"international shipping from Dubai","Commercial","International shipping","High","Origin and cross-border intent"
+"parcel shipping Dubai to India","Transactional","International enquiry","Medium","Destination hypothesis; needs demand validation"
+"international shipping volumetric weight","Informational","International FAQ","Medium","Quote preparation question"
+"ecommerce delivery Dubai","Commercial","E-commerce delivery","High","Business audience intent"
+"cash on delivery courier UAE","Commercial","E-commerce FAQ","High","Merchant requirement"
+"ecommerce returns UAE","Commercial","E-commerce delivery","Medium","Post-purchase requirement"
+"courier delivery cost Dubai","Commercial","Enquiry","High","Needs dimensions and route"
+"how to pack a parcel UAE","Informational","Domestic delivery","Low","Preparation support"

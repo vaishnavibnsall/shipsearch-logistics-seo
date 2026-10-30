@@ -1,0 +1,28 @@
+{
+  "source": "https://www.kaggle.com/datasets/prachi13/customer-analytics",
+  "retrieved": "2026-10-30",
+  "sha256": "dcdc3fd8f0507ec400174ef70d88d634321cc2ce8f4ea11bf4e8c847fdd325b3",
+  "rows": 10999,
+  "late": 6563,
+  "onTime": 4436,
+  "latePercent": 59.67,
+  "averageSupportCalls": 4.05,
+  "byMode": [
+    {
+      "mode": "Flight",
+      "count": 1777,
+      "late": 1069
+    },
+    {
+      "mode": "Road",
+      "count": 1760,
+      "late": 1035
+    },
+    {
+      "mode": "Ship",
+      "count": 7462,
+      "late": 4459
+    }
+  ],
+  "limitations": "Unspecified geography and sampling; observational data. Label 1 means NOT delivered on time per publisher. No Dubai inference, prediction, causal claim or ShipSearch service KPI."
+}

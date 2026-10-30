@@ -1,0 +1,44 @@
+[
+  {
+    "path": "/",
+    "title": "Dubai Courier & Shipping Services | ShipSearch",
+    "description": "Explore domestic delivery, international shipping and e-commerce delivery from Dubai. Prepare a clear parcel enquiry with the fictional ShipSearch courier brand.",
+    "noindex": false
+  },
+  {
+    "path": "/domestic-delivery/",
+    "title": "Domestic Courier Delivery in Dubai & UAE | ShipSearch",
+    "description": "Explore domestic courier delivery from Dubai across the UAE. Plan parcel collection, prepare your address details and build a delivery enquiry with ShipSearch.",
+    "noindex": false
+  },
+  {
+    "path": "/international-shipping/",
+    "title": "International Shipping from Dubai | ShipSearch",
+    "description": "Plan international parcel shipping from Dubai. Understand the details needed for a quote, customs preparation and parcel measurements before making an enquiry.",
+    "noindex": false
+  },
+  {
+    "path": "/e-commerce-delivery/",
+    "title": "E-commerce Delivery in Dubai & UAE | ShipSearch",
+    "description": "Plan e-commerce delivery for your Dubai store. Build an enquiry covering order volumes, cash on delivery, customer updates and returns across the UAE.",
+    "noindex": false
+  },
+  {
+    "path": "/enquiry/",
+    "title": "Build a Delivery Enquiry | ShipSearch Dubai",
+    "description": "Prepare a downloadable delivery enquiry with route, dimensions and parcel requirements. Compare illustrative actual and volumetric weight in your browser.",
+    "noindex": true
+  },
+  {
+    "path": "/case-study/",
+    "title": "ShipSearch SEO Case Study: Research, Data & Audit",
+    "description": "Explore ShipSearch’s keyword map, three-competitor research, Kaggle shipping analysis and reproducible before-and-after SEO audit for a Dubai courier website.",
+    "noindex": false
+  },
+  {
+    "path": "/privacy/",
+    "title": "Privacy & Demo Limitations | ShipSearch",
+    "description": "Understand ShipSearch’s browser-only enquiry tool, external font requests, fictional service identity and portfolio dataset limitations.",
+    "noindex": true
+  }
+]
