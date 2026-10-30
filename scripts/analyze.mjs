@@ -1,0 +1,10 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const path=process.argv[2]||'data/raw/Train.csv';
+const raw=await readFile(path,'utf8');
+const [head,...lines]=raw.trim().split(/\r?\n/);const keys=head.split(',');
+const rows=lines.map(line=>Object.fromEntries(line.split(',').map((v,i)=>[keys[i],v])));
+if(rows.length!==10999||rows.some(r=>!['0','1'].includes(r['Reached.on.Time_Y.N'])))throw Error('Unexpected dataset schema or row count');
+const count=rows.length,late=rows.filter(r=>r['Reached.on.Time_Y.N']==='1').length;
+const summary={source:'https://www.kaggle.com/datasets/prachi13/customer-analytics',retrieved:'2026-10-30',sha256:createHash('sha256').update(raw).digest('hex'),rows:count,late,onTime:count-late,latePercent:+(100*late/count).toFixed(2),averageSupportCalls:+(rows.reduce((s,r)=>s+Number(r.Customer_care_calls),0)/count).toFixed(2),byMode:[...new Set(rows.map(r=>r.Mode_of_Shipment))].sort().map(mode=>{const subset=rows.filter(r=>r.Mode_of_Shipment===mode);return{mode,count:subset.length,late:subset.filter(r=>r['Reached.on.Time_Y.N']==='1').length}}),limitations:'Unspecified geography and sampling; observational data. Label 1 means NOT delivered on time per publisher. No Dubai inference, prediction, causal claim or ShipSearch service KPI.'};
+await mkdir('data',{recursive:true});await writeFile('data/shipping-summary.json',JSON.stringify(summary,null,2)+'\n');console.log(summary);

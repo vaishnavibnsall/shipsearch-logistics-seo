@@ -1,0 +1,1 @@
+{"name":"shipsearch","version":"1.0.0","private":true,"type":"module","description":"Evidence-led Dubai courier website and SEO portfolio case study","scripts":{"build":"node scripts/build.mjs","dev":"node scripts/serve.mjs","test":"node --test","analyze":"node scripts/analyze.mjs"},"engines":{"node":">=22"}}
