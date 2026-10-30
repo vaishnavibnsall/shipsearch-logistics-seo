@@ -1,6 +1,8 @@
 import {mkdir,readFile,writeFile,copyFile,rm} from 'node:fs/promises';
 import {services,keywords,sources} from '../src/content.mjs';
 const origin=process.env.SITE_URL||'https://shipsearch-dubai-portfolio.quirkyskink512.chatgpt.site';
+const base=process.env.BASE_PATH||'';
+if(base&&!/^\/[a-zA-Z0-9_-]+$/.test(base))throw Error('BASE_PATH must be empty or one path segment');
 if(!/^https:\/\/[\w.-]+(?::\d+)?$/.test(origin))throw Error('SITE_URL must be an HTTPS origin without trailing slash');
 const data=JSON.parse(await readFile('data/shipping-summary.json','utf8'));
 await rm('dist',{recursive:true,force:true});await mkdir('dist/assets',{recursive:true});
@@ -28,4 +30,11 @@ await writeFile('dist/sitemap.xml',`<?xml version="1.0" encoding="UTF-8"?><urlse
 await mkdir('dist/data',{recursive:true});await copyFile('data/shipping-summary.json','dist/data/shipping-summary.json');
 await writeFile('data/keyword-map.csv','keyword,intent,destination,priority,rationale\n'+keywords.map(row=>row.map(c=>'"'+c.replaceAll('"','""')+'"').join(',')).join('\n')+'\n');await copyFile('data/keyword-map.csv','dist/data/keyword-map.csv');
 await writeFile('dist/404.html','<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found | ShipSearch</title><link rel="stylesheet" href="/assets/styles.css"><main class="container section"><h1>This route ends here.</h1><p>The page you requested could not be found.</p><a class="button" href="/">Return to ShipSearch</a></main></html>');
-await writeFile('data/page-manifest.json',JSON.stringify(pages,null,2)+'\n');console.log(`Built ${pages.length} static pages at ${origin}`);
+if(base){
+  for(const file of [...pages.map(p=>p.path==='/'?'dist/index.html':`dist${p.path}index.html`),'dist/404.html','dist/sitemap.xml','dist/robots.txt']){
+    let html=await readFile(file,'utf8');
+    html=html.replaceAll('href="/','href="'+base+'/').replaceAll('src="/','src="'+base+'/').replaceAll(origin+'/',origin+base+'/');
+    await writeFile(file,html);
+  }
+}
+await writeFile('data/page-manifest.json',JSON.stringify(pages,null,2)+'\n');console.log(`Built ${pages.length} static pages at ${origin+base}`);

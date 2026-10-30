@@ -2,6 +2,10 @@
 
 A complete frontend and evidence-led SEO portfolio project for a **fictional Dubai courier**. Designed around shipping customers’ practical questions: what service fits, what information is needed, and what happens next.
 
+[Public website](https://vaishnavibnsall.github.io/shipsearch-logistics-seo/) · [Research case study](https://vaishnavibnsall.github.io/shipsearch-logistics-seo/case-study/)
+
+![ShipSearch desktop preview](docs/screenshots/desktop.png)
+
 ## Experience
 
 - Seven pre-rendered pages: homepage, domestic delivery, international shipping, e-commerce delivery, enquiry and research case study, plus privacy.
@@ -47,7 +51,7 @@ $env:SITE_URL = 'https://your-domain.example'
 npm run build
 ```
 
-GitHub Actions runs build and tests on pushes and pull requests. The project does not assume a paid service or need any secret to build. Sites identity is held in `.openai/hosting.json`; its source-sync remote is separate from GitHub.
+GitHub Actions runs build and tests on pushes and pull requests. A separate Pages workflow rebuilds with the public origin and `BASE_PATH=/shipsearch-logistics-seo`, then deploys the static artifact. The project does not assume a paid service or need any secret to build. Sites identity is held in `.openai/hosting.json`; its source-sync remote is separate from GitHub.
 
 ## Research and credibility
 
